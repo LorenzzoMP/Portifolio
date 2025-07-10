@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifólio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=egg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <style>
         :root {
             --background-1: #262626;
@@ -27,6 +30,153 @@
             background: var(--background-1);
         }
 
+        .header-fixo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--background-2);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 2.5rem 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            justify-content: flex-start;
+        }
+
+        .navbar-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            justify-content: flex-end;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, var(--color-1) 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(240, 5, 83, 0.87);
+            white-space: nowrap;
+            height: 45px;
+        }
+
+        .download-btn span {
+            font-size: 1.2rem;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--color-2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle {
+            background: var(--background-2);
+            border: var(--background-2);
+            color: var(--color-2);
+            padding: 0;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle span {
+            font-size: 1.2rem; /* Tamanho consistente do ícone */
+        }
+
+        /* Hover effects */
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(248, 2, 96, 0.4);
+        }
+
+        .logo-icon:hover {
+            animation: wiggle-hover 0.6s ease-in-out;
+            color: var(--color-1);
+        }
+
+
+        @keyframes wiggle-hover {
+            0% { transform: rotate(0deg) scale(1.1); }
+            25% { transform: rotate(15deg) scale(1.1); }
+            75% { transform: rotate(-15deg) scale(1.1); }
+            100% { transform: rotate(0deg) scale(1.1); }
+        }
+
+        .theme-toggle:hover {
+            background: #474747;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-fixo {
+                padding: 0.75rem 1rem;
+                height: 60px;
+            }
+            
+            .download-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+                height: 40px;
+            }
+            
+            .download-btn span {
+                font-size: 1rem;
+            }
+            
+            .logo-icon {
+                font-size: 2rem;
+            }
+            
+            .theme-toggle {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .theme-toggle span {
+                font-size: 1rem;
+            }
+        }
+
         /* Seção Hero */
         .hero {
             min-height: 100vh;
@@ -38,6 +188,7 @@
             text-align: center;
             color: var(--color-1);
             position: relative;
+            padding-top: 5rem; /* Espaço para o header fixo */
         }
 
         .hero-content {
@@ -393,6 +544,30 @@
     </style>
 </head>
 <body>
+
+    <!-- Header fixo -->
+    <header class="header-fixo">
+        <div class="navbar-left">
+            <a href="#" class="download-btn" onclick="downloadCV()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                </svg>
+                Baixar Currículo
+            </a>
+        </div>
+        
+        <div class="navbar-center">
+            <span class="material-symbols-outlined logo-icon">egg</span>
+        </div>
+        
+        <div class="navbar-right">
+            <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">
+                <i class="bi bi-sun"></i>
+            </button>
+        </div>
+    </header>
+
     <!-- Seção Hero -->
     <section class="hero">
         <div class="hero-content">
@@ -604,6 +779,54 @@
     </footer>
 
     <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = themeToggle.querySelector('i');
+            
+            body.classList.toggle('light-theme');
+            
+            if (body.classList.contains('light-theme')) {
+                themeIcon.className = 'bi bi-moon'; // Lua para tema claro
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeIcon.className = 'bi bi-sun'; // Sol para tema escuro
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Carrega o tema salvo
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = themeToggle.querySelector('i');
+            
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-theme');
+                themeIcon.className = 'bi bi-moon';
+            } else {
+                themeIcon.className = 'bi bi-sun';
+            }
+        });
+
+        // Função para download do currículo
+        function downloadCV() {
+            // Substitua pelo link do seu currículo
+            const cvUrl = 'https://drive.google.com/file/d/1hu3Pu3A1KpIq4mcS3H1GxHn7SWaWoGp6/view?usp=sharing';
+            window.open(cvUrl, '_blank');
+        }
+
+        // Carrega o tema salvo
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = themeToggle.querySelector('.material-symbols-outlined');
+            
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-theme');
+                themeIcon.textContent = 'dark_mode';
+            }
+        });
         // Animação de fade-in quando elementos entram na viewport
         const observerOptions = {
             threshold: 0.1,
